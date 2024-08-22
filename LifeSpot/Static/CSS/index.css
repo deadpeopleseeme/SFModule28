@@ -11,6 +11,10 @@ footer {
     padding-top: 1%;
 }
 
+.hidden {
+    display: none; /* Используется для скрытия контейнеров */
+}
+
 /* Простой комбинатор */
 header, footer, body, .video-container {
     background-color: linen;
