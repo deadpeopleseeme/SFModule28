@@ -5,8 +5,16 @@
     <meta charset="UTF-8">
     <title>LifeSpot</title>
     <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css">
-    <script src="../Static/JS/contentFilter.js"></script> <!-- Подключаем внешний файл с функцией -->
-    <script src="../Static/JS/sessionHandler.js"></script> <!-- Подключаем внешний файл с функцией -->
+    <script src="../Static/JS/contentFilter.js"></script> <!-- Подключаем внешний файл с функцией фильтрации контента по вводу от юзера -->
+    <script src="../Static/JS/sessionHandler.js"></script> <!-- Подключаем внешний файл с функцией проверки возраста и сохранения сессии-->
+    <!-- Внутренний скрипт с вызовами функций -->
+    <script>
+        // Создадим и обработаем сессию
+        let session = handleSession();
+
+        // Логируем в консоль.
+        sessionLog(session)
+    </script>
 
 </head>
     <header>

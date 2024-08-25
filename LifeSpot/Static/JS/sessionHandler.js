@@ -1,43 +1,33 @@
-window.onload = function () {
-    console.log('sessionHandler.js loaded');
-
-    // Создадим и обработаем сессию
-    let session = handleSession();
-
-    // Логируем сессию в консоль
-    sessionLog(session);
-};
-
+// Обработка сессии (объявлено через declaration)
 function handleSession() {
     // создадим объект Map для хранения сессии
     let session = new Map();
-
     // Сохраним UserAgent
-    session.set("userAgent", window.navigator.userAgent);
+    session.set("userAgent", window.navigator.userAgent)
 
     // Запросим возраст пользователя и тоже сохраним
-    let age = prompt("Пожалуйста, введите ваш возраст?");
+    session.set("age", prompt("Пожалуйста, введите ваш возраст?"))
 
     // Проверка на возраст и сохранение сессии
-    if (age >= 18)
-    {
+    if (session.get("age") >= 18) {
         let startDate = new Date().toLocaleString();
+
         alert("Приветствуем на LifeSpot! " + '\n' + "Текущее время: " + startDate);
-        session.set("startDate", startDate);
+        session.set("startDate", startDate)
     }
-    else
-    {
+    else {
         alert("Наши трансляции не предназначены для лиц моложе 18 лет. Вы будете перенаправлены");
-        window.location.href = "http://www.google.com";
+        window.location.href = "http://www.google.com"
     }
 
-    session.set("age", age);
+    // Теперь мы возвращаем объект сессии
     return session;
 }
 
-// Логирование сессии (объявлено через function expression)
-let sessionLog = function (session) {
-    for (let [key, value] of session) {
-        console.log(`${key}: ${value}`);
+// Логирование сессии (объявлено через expression)
+let sessionLog = function logSession(session) {
+    // Вывод в консоль
+    for (let result of session) {
+        console.log(result)
     }
-};
+}
