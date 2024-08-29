@@ -73,31 +73,47 @@ aside {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #333; /* Светлее, чем #111 */
+    background-color: #333;
     overflow-x: hidden;
     padding-top: 2%;
     font-size: large;
 }
 
     /* Цвет текста в боковой панели */
-    aside .navbar p {
-        color: #ffffff; /* Ярко-белый цвет текста */
-        margin: 0;
-        padding: 10px; /* Добавлен отступ для улучшения визуализации */
+    aside .navbar a {
+        color: #ffffff; /* Белый цвет текста */
+        text-decoration: none; /* Убираем подчеркивание у ссылок */
+        display: block; /* Ссылки будут занимать всю ширину контейнера */
+        padding: 10px; /* Отступ для улучшения визуализации */
     }
 
-        aside .navbar p a {
-            color: #ffffff; /* Ярко-белый цвет ссылок */
-            text-decoration: none; /* Убираем подчеркивание у ссылок */
+        /* Эффект наведения для ссылок */
+        aside .navbar a:hover {
+            color: #d3d3d3; /* Светло-серый цвет текста при наведении */
+            text-decoration: none; /* Убираем подчеркивание при наведении */
+            
         }
-
-            /* Эффект наведения для ссылок */
-            aside .navbar p a:hover {
-                color: #ffcc00; /* Изменение цвета текста при наведении */
-                text-decoration: underline; /* Подчеркивание ссылки при наведении */
-            }
 
 /* Стили body */
 body {
-    padding-left: 11%;
+    padding-left: 10%;
+}
+
+/* Стили кнопки "оставить отзыв" */
+.review-container, .review-button {
+    display: inline-block;
+    margin-top: 0.5em;
+    padding-top: 1%;
+}
+
+.review-container, .review-button {
+    display: inline-block;
+    margin-top: 0.5em;
+    padding-top: 1%;
+}
+
+.review-text {
+    display: block;
+    margin-top: 0.5em;
+    padding-top: 1%;
 }

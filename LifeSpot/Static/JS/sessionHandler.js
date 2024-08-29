@@ -1,32 +1,42 @@
-// Обработка сессии (объявлено через declaration)
+/*
+* Сессия теперь создается в общей области видимости.
+* Будет "захватываться" тремя функциями
+* 
+* */
+let session = new Map();
+
+/*
+* Сохранение данных сессии сразу при заходе пользователя на страницу
+* 
+* */
 function handleSession() {
-    // создадим объект Map для хранения сессии
-    let session = new Map();
+    // Сохраним время начала сессии
+    session.set("startDate", new Date().toLocaleString())
     // Сохраним UserAgent
     session.set("userAgent", window.navigator.userAgent)
+}
 
-    // Запросим возраст пользователя и тоже сохраним
+/*
+* Проверка возраста пользователя
+* 
+* */
+function checkAge() {
     session.set("age", prompt("Пожалуйста, введите ваш возраст?"))
 
-    // Проверка на возраст и сохранение сессии
     if (session.get("age") >= 18) {
-        let startDate = new Date().toLocaleString();
-
-        alert("Приветствуем на LifeSpot! " + '\n' + "Текущее время: " + startDate);
-        session.set("startDate", startDate)
+        alert("Приветствуем на LifeSpot! " + '\n' + "Текущее время: " + new Date().toLocaleString());
     }
     else {
         alert("Наши трансляции не предназначены для лиц моложе 18 лет. Вы будете перенаправлены");
         window.location.href = "http://www.google.com"
     }
-
-    // Теперь мы возвращаем объект сессии
-    return session;
 }
 
-// Логирование сессии (объявлено через expression)
-let sessionLog = function logSession(session) {
-    // Вывод в консоль
+/*
+* Вывод данных сессии в консоль
+* 
+* */
+let sessionLog = function logSession() {
     for (let result of session) {
         console.log(result)
     }

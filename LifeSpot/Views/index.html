@@ -7,56 +7,71 @@
     <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css">
     <script src="../Static/JS/contentFilter.js"></script> <!-- Подключаем внешний файл с функцией фильтрации контента по вводу от юзера -->
     <script src="../Static/JS/sessionHandler.js"></script> <!-- Подключаем внешний файл с функцией проверки возраста и сохранения сессии-->
+    
     <!-- Внутренний скрипт с вызовами функций -->
-    <script>
-        // Создадим и обработаем сессию
-        let session = handleSession();
+    <!--<script>
 
-        // Логируем в консоль.
-        sessionLog(session)
-    </script>
+            // Проверка на возраст
+            checkAge();
+
+            // сохранение сессии
+            handleSession()
+
+            // вывод данных сессии в консоль
+            sessionLog();
+
+            // функция для получения пользовательского ввода
+            const inputParseFunction = function () {
+                return document.getElementsByTagName('input')[0].value.toLowerCase();
+            }
+
+            // Показываем рекламу через минуту после входа юзера на сайт
+            setTimeout(() =>
+                alert("Мой инст: @kakoeimyavoobshesvobodno"),
+                30000);
+
+        </script> -->
 
 </head>
-    <header>
-        <!--Заголовок страницы-->
+<header>
+    <!--Заголовок страницы-->
     <h1>LifeSpot - прямые трансляции с улиц</h1>
     <!--Параграф-->
     <p>Покажем, что происходит прямо сейчас</p>
-    </header>
-    <body>
-        <div class="bordered">
-            <div class="search-container">
-                <input type="text" placeholder="Поиск..." oninput="filterContent(this.value)">
-                <input type="submit" value="Найти">
-            </div>
-
-            <div class="video-container">
-                <iframe width="374" height="210" src="https://www.youtube.com/embed/srlpC5tmhYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <h3 class="video-title">Нью-Йорк, Брайант Парк</h3>
-
-            </div>
-            <div class="video-container">
-                <iframe width="374" height="210" src="https://www.youtube.com/embed/z7SiAaN4ogw?si=lGS1m0vsqJFUbmzD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <h3 class="video-title">Камера с разными городами мира</h3>
-
-            </div>
-            <div class="video-container">
-                <iframe width="374" height="210" src="https://www.youtube.com/embed/JplMzss6_YE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <h3 class="video-title">Лондон, автобусный маршрут</h3>
-
-            </div>
+</header>
+<body>
+    <div class="bordered">
+        <div class="search-container">
+            <input type="text" placeholder="Поиск..." oninput="
+                    // Функция объявлена через expression
+                    const inputParseFunction = function(){
+                    return document.getElementsByTagName('input')[0].value.toLowerCase();
+                    }
+                   // Вызов (функция в аргумент передаётся без круглых скобок)
+                   filterContent( inputParseFunction )">
+            <input type="submit" value="Найти">
         </div>
-        <!--Сайд-бар страницы-->
-        <aside id="sidebar">
-            <div class="navbar">
-                <p><a href="/">Все трансляции</a></p>
-                <p><a href="/">О проекте</a></p>
-            </div>
-        </aside>
-    </body>
-    <footer>
-        <p>Валян - все права защищены (но это не точно)</p>
-        <p>Связаться: ddpplsm@gmail.com</p>
-    </footer>
+
+        <div class="video-container">
+            <iframe width="374" height="210" src="https://www.youtube.com/embed/srlpC5tmhYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3 class="video-title">Нью-Йорк, Брайант Парк</h3>
+
+        </div>
+        <div class="video-container">
+            <iframe width="374" height="210" src="https://www.youtube.com/embed/z7SiAaN4ogw?si=lGS1m0vsqJFUbmzD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3 class="video-title">Камера с разными городами мира</h3>
+
+        </div>
+        <div class="video-container">
+            <iframe width="374" height="210" src="https://www.youtube.com/embed/JplMzss6_YE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3 class="video-title">Лондон, автобусный маршрут</h3>
+
+        </div>
+    </div>
+    <!-- Здесь подгружаем sidebar -->
+    <!--SIDEBAR-->
+</body>
+<!-- Здесь подгружаем footer -->
+<!--FOOTER-->
 </html>
 
